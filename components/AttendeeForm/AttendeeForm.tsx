@@ -1,12 +1,15 @@
 import { User } from "@prisma/client";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useCreateAttendee } from "@/hooks/use-create-attendee";
 
-type FormValues = Omit<User, "attending"> & {
+type FormValues = Omit<User, "attending" | "id" | "createdAt"> & {
   attending: string;
 };
 
 export default function AttendeeForm() {
+  const { mutate } = useCreateAttendee();
+
   const {
     register,
     handleSubmit,
@@ -17,54 +20,45 @@ export default function AttendeeForm() {
       attending: "yes",
     },
   });
+  const name = watch("name");
 
   const onSubmit = (data: FormValues) => {
     let attending = false;
     if (data.attending === "yes") {
       attending = true;
     }
-    fetch("/api/create-attendee", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ ...data, attending }),
-    });
+    mutate({ ...data, attending });
   };
 
-  const name = watch("name");
-
   return (
-    <>
-      <form method="post" onSubmit={handleSubmit(onSubmit)}>
-        <p>
-          <label>
-            <input
-              type="radio"
-              value="yes"
-              {...register("attending", { required: true })}
-            />{" "}
-            Yes
-          </label>
-          <label>
-            <input type="radio" name="attending" value="no" /> No
-          </label>
-        </p>
-        <hr />
+    <form method="post" onSubmit={handleSubmit(onSubmit)}>
+      <p>
         <label>
-          Name:{" "}
-          <input {...register("name", { required: true })} defaultValue="" />
+          <input
+            type="radio"
+            value="yes"
+            {...register("attending", { required: true })}
+          />{" "}
+          Yes
         </label>
-        {errors.name && <span>This field is required</span>}
-        <hr />
         <label>
-          Message: <input {...register("message")} defaultValue="" />
+          <input type="radio" name="attending" value="no" /> No
         </label>
-        <hr />
-        <button type="submit" disabled={!name}>
-          Submit form
-        </button>
-      </form>
-    </>
+      </p>
+      <hr />
+      <label>
+        Name:{" "}
+        <input {...register("name", { required: true })} defaultValue="" />
+      </label>
+      {errors.name && <span>This field is required</span>}
+      <hr />
+      <label>
+        Message: <input {...register("message")} defaultValue="" />
+      </label>
+      <hr />
+      <button type="submit" disabled={!name}>
+        Submit form
+      </button>
+    </form>
   );
 }
