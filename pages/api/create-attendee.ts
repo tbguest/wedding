@@ -12,7 +12,6 @@ export default async function handler(
 ) {
   // TODO: validate inputs
   const data = req.body;
-  console.log("data", data);
   const result = await Attendee.create({
     data,
   });

@@ -3,7 +3,7 @@ import { Prisma } from "@prisma/client";
 
 const create = ({ data }: { data: Prisma.UserCreateInput }) => {
   return prisma.user.create({
-    data: data,
+    data,
   });
 };
 

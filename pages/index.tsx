@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import classes from "@/styles/Home.module.css";
+import AttendeeForm from "@/components/AttendeeForm/AttendeeForm";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +30,10 @@ export default function Home() {
         duis ut fugiat adipisicing aute voluptate laboris aliquip duis ullamco
         incididunt. Duis ad ullamco dolor tempor eu.
       </p>
+      <div>
+        <h3>Are you coming?</h3>
+      </div>
+      <AttendeeForm />
     </main>
   );
 }
