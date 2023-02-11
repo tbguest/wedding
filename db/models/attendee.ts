@@ -1,4 +1,4 @@
-import { prisma } from "./client";
+import { prisma } from "../client";
 import { Prisma } from "@prisma/client";
 
 const create = ({ data }: { data: Prisma.UserCreateInput }) => {
