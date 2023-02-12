@@ -56,7 +56,6 @@
   justify-content: center;
   height: 1.5rem;
   color: white;
-  margin: 1rem 0rem;
   padding: 24px 0;
   border-radius: var(--border-radius);
   background-color: rgb(116, 1, 116);
@@ -100,4 +99,15 @@
 
 .form input[type="radio"]:checked::before {
   transform: scale(1);
+}
+
+.visuallyHidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }

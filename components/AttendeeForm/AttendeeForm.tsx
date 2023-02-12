@@ -61,7 +61,7 @@ export default function AttendeeForm() {
         </label>
       </p>
       <label>
-        <div className={classes.labelCol}>Name: </div>
+        <div className={classes.visuallyHidden}>Name: </div>
         <input
           {...register("name", { required: true })}
           defaultValue=""
@@ -71,7 +71,7 @@ export default function AttendeeForm() {
       </label>
       {errors.name && <span>This field is required</span>}
       <label>
-        <div className={classes.labelCol}>Others: </div>
+        <div className={classes.visuallyHidden}>Others: </div>
         <input
           {...register("additions")}
           defaultValue=""
@@ -80,11 +80,11 @@ export default function AttendeeForm() {
         />
       </label>
       <label>
-        <div className={classes.labelCol}>Message: </div>
+        <div className={classes.visuallyHidden}>Message: </div>
         <textarea
           {...register("message")}
           defaultValue=""
-          placeholder="You don't have to write anything here, but you can if you want!"
+          placeholder="Message (optional)"
           className={classes.input}
         />
       </label>
