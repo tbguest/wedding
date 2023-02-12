@@ -1,9 +1,9 @@
-import { User } from "@prisma/client";
 import React from "react";
+import { Prisma } from "@prisma/client";
 import { useForm } from "react-hook-form";
 import { useCreateAttendee } from "@/hooks/use-create-attendee";
 
-type FormValues = Omit<User, "attending" | "id" | "createdAt"> & {
+type FormValues = Omit<Prisma.UserCreateInput, "attending"> & {
   attending: string;
 };
 
