@@ -1,0 +1,103 @@
+.form {
+  min-width: var(--max-width);
+  position: relative;
+  display: grid;
+  gap: 24px;
+  padding: 0 48px;
+}
+
+.form h2 {
+  text-align: center;
+}
+
+.form label {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.radio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+  border-radius: var(--border-radius);
+  background-color: #f5f5f5;
+  border: none;
+}
+
+.labelCol {
+  width: 120px;
+}
+
+.form label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.form textarea {
+  resize: vertical;
+}
+
+.buttonRow {
+  display: flex;
+}
+
+.form button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.5rem;
+  color: white;
+  margin: 1rem 0rem;
+  padding: 24px 0;
+  border-radius: var(--border-radius);
+  background-color: rgb(116, 1, 116);
+}
+
+.form button:hover {
+  background-color: rgb(138, 3, 138);
+  cursor: pointer;
+}
+
+.form button:focus {
+  border: 1px solid black;
+}
+
+.form input[type="radio"] {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 50%;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+.form input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em purple;
+  background-color: CanvasText;
+}
+
+.form input[type="radio"]:checked::before {
+  transform: scale(1);
+}

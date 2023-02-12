@@ -25,9 +25,6 @@ export const IndexPage = () => {
         duis ut fugiat adipisicing aute voluptate laboris aliquip duis ullamco
         incididunt. Duis ad ullamco dolor tempor eu.
       </p>
-      <div>
-        <h3>Are you coming?</h3>
-      </div>
       <AttendeeForm />
     </main>
   );
