@@ -176,6 +176,10 @@
 
 /* Mobile */
 @media (max-width: 700px) {
+  .main {
+    padding: 32px;
+  }
+
   .content {
     padding: 4rem;
   }
