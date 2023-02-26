@@ -49,7 +49,7 @@
   display: flex;
 }
 
-.form button {
+.button {
   width: 100%;
   display: flex;
   align-items: center;
@@ -58,16 +58,33 @@
   color: white;
   padding: 24px 0;
   border-radius: var(--border-radius);
-  background-color: rgb(116, 1, 116);
+  background-color: var(--color-accent-primary);
+  transition: background-color 0.5s ease-out;
+  border: none;
 }
 
-.form button:hover {
-  background-color: rgb(138, 3, 138);
+.buttonClicked {
+  background-color: green;
+}
+
+.button:hover {
+  background-color: var(--color-accent-primary-highlight);
   cursor: pointer;
 }
 
-.form button:focus {
-  border: 1px solid black;
+.buttonClicked:hover {
+  background-color: green;
+  cursor: default;
+}
+
+.button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -2px;
+}
+
+.buttonText {
+  color: white;
+  background-color: inherit;
 }
 
 .form input[type="radio"] {
@@ -93,7 +110,7 @@
   border-radius: 50%;
   transform: scale(0);
   transition: 120ms transform ease-in-out;
-  box-shadow: inset 1em 1em purple;
+  box-shadow: inset 1em 1em var(--color-accent-primary);
   background-color: CanvasText;
 }
 
@@ -110,4 +127,12 @@
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+.required {
+  border: 1px solid red;
+}
+
+.disabled {
+  cursor: default;
 }

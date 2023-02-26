@@ -2,16 +2,16 @@ import React from "react";
 import { Prisma } from "@prisma/client";
 import { useForm } from "react-hook-form";
 import { useCreateAttendee } from "@/hooks/use-create-attendee";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import classes from "./AttendeeForm.module.css";
+import classNames from "classnames";
 
 type FormValues = Omit<Prisma.UserCreateInput, "attending"> & {
   attending: string;
 };
 
-// TODO: tabbable button
-
 export default function AttendeeForm() {
-  const { mutate } = useCreateAttendee();
+  const { mutate, isLoading, isSuccess } = useCreateAttendee();
 
   const {
     register,
@@ -33,6 +33,8 @@ export default function AttendeeForm() {
     mutate({ ...data, attending });
   };
 
+  const submitDisabled = isLoading || isSuccess;
+
   return (
     <form
       method="post"
@@ -45,7 +47,10 @@ export default function AttendeeForm() {
           <input
             type="radio"
             value="yes"
-            className={classes.radioInput}
+            disabled={submitDisabled}
+            className={classNames(classes.radioInput, {
+              [classes.radioInput]: submitDisabled,
+            })}
             {...register("attending", { required: true })}
           />{" "}
           Yes
@@ -53,29 +58,48 @@ export default function AttendeeForm() {
         <label>
           <input
             type="radio"
-            name="attending"
             value="no"
-            className={classes.radioInput}
+            {...register("attending", { required: true })}
+            disabled={submitDisabled}
+            className={classNames(classes.radioInput, {
+              [classes.radioInput]: submitDisabled,
+            })}
           />{" "}
           No
         </label>
       </p>
       <label>
         <div className={classes.visuallyHidden}>Name: </div>
-        <input
-          {...register("name", { required: true })}
-          defaultValue=""
-          placeholder="Who are you?"
-          className={classes.input}
-        />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            textAlign: "left",
+            width: "100%",
+          }}
+        >
+          <input
+            {...register("name", { required: true })}
+            placeholder="Who are you?"
+            disabled={submitDisabled}
+            className={classNames(classes.input, {
+              [classes.required]: errors.name,
+            })}
+          />
+          {errors.name && (
+            <p style={{ color: "red", marginTop: 4 }}>
+              Please identify yourself.
+            </p>
+          )}
+        </div>
       </label>
-      {errors.name && <span>This field is required</span>}
       <label>
         <div className={classes.visuallyHidden}>Others: </div>
         <input
           {...register("additions")}
           defaultValue=""
           placeholder="Anyone else you think might come with you?"
+          disabled={submitDisabled}
           className={classes.input}
         />
       </label>
@@ -85,12 +109,25 @@ export default function AttendeeForm() {
           {...register("message")}
           defaultValue=""
           placeholder="Message (optional)"
+          disabled={submitDisabled}
           className={classes.input}
         />
       </label>
       <div className={classes.buttonRow}>
-        <button type="submit" disabled={!name}>
-          Submit
+        <button
+          type="submit"
+          disabled={submitDisabled}
+          className={classNames(classes.button, {
+            [classes.buttonClicked]: isSuccess,
+          })}
+        >
+          {isSuccess ? (
+            <p className={classes.buttonText}>Thanks!</p>
+          ) : isLoading ? (
+            <LoadingSpinner />
+          ) : (
+            <p className={classes.buttonText}>Submit</p>
+          )}
         </button>
       </div>
     </form>

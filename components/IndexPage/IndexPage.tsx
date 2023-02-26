@@ -1,5 +1,6 @@
 import classes from "./IndexPage.module.css";
 import AttendeeForm from "@/components/AttendeeForm/AttendeeForm";
+import { GiDandelionFlower } from "react-icons/gi";
 
 export const IndexPage = () => {
   return (
@@ -7,24 +8,31 @@ export const IndexPage = () => {
       <h1 style={{ marginBottom: 0 }}>Laura and Tristan</h1>
       <h2 style={{ marginBottom: 4 }}>are getting married</h2>
       <h3 style={{ marginBottom: 16 }}>on September 2nd, 2023</h3>
+      <br />
       <p className={classes.description}>{"We're having a party"}</p>
       <p className={classes.description}>{"You're invited!"}</p>
+      <br />
+      <br />
       <p className={classes.description}>
-        Ad sint occaecat amet amet. Adipisicing esse nulla incididunt esse
-        aliquip minim tempor cupidatat ut officia. Ad id dolore nisi enim esse
-        qui ut dolore velit non exercitation. Minim laboris nisi Lorem commodo
-        duis duis aute irure labore. Sunt dolor elit duis consectetur eiusmod
-        labore eiusmod. Nostrud eu sunt voluptate eiusmod est Lorem.
+        {"2078 Highway 329, The Lodge, NS (our house)"}
       </p>
       <p className={classes.description}>
-        Amet sint velit commodo dolore dolore dolor incididunt excepteur magna
-        pariatur amet irure. Proident occaecat id nisi consectetur aliqua
-        aliquip ex. Ad nisi amet laborum et consectetur ad voluptate nostrud est
-        aliquip incididunt tempor. Ut Lorem laborum aliqua cupidatat aliqua
-        aliquip consequat eu sunt est sunt. Non quis Lorem elit labore. Pariatur
-        duis ut fugiat adipisicing aute voluptate laboris aliquip duis ullamco
-        incididunt. Duis ad ullamco dolor tempor eu.
+        {"Come after 3 PM. We'll have a brief ceremony around 4:30 PM."}
       </p>
+      <p className={classes.description}>
+        {
+          "Expect: A party, rain or shine. Sufficient shelter to dance all night in any weather. Otherwise limited amenities. Bring whatever you need to spend the day outside. If you want to sit, bring a chair."
+        }
+      </p>
+      <p className={classes.description}>
+        {"If you need a place to sleep, contact us."}
+      </p>
+      <p className={classes.description}>
+        {
+          "Check back here before you come. Parking is going to require a plan :)."
+        }
+      </p>
+      <GiDandelionFlower size={64} style={{ margin: 32 }} />
       <AttendeeForm />
     </main>
   );
