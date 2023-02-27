@@ -31,6 +31,12 @@
   border: none;
 }
 
+.input:disabled {
+  background-color: var(--color-disabled);
+  cursor: default;
+  color: #6d6d6d;
+}
+
 .labelCol {
   width: 120px;
 }
@@ -101,6 +107,11 @@
   display: grid;
   place-content: center;
   cursor: pointer;
+}
+
+.form input[type="radio"]:disabled {
+  background-color: var(--color-disabled);
+  cursor: default;
 }
 
 .form input[type="radio"]::before {
