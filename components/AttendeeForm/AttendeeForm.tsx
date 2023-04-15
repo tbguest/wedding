@@ -88,7 +88,7 @@ export default function AttendeeForm() {
           />
           {errors.name && (
             <p style={{ color: "red", marginTop: 4 }}>
-              Please identify yourself.
+              Please identify yourself
             </p>
           )}
         </div>
