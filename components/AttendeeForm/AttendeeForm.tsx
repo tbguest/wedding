@@ -42,6 +42,9 @@ export default function AttendeeForm() {
       className={classes.form}
     >
       <h2>Are you coming?</h2>
+      <p className={classes.secondary}>
+        {"For big-picture logistics. Specifics aren't really important."}
+      </p>
       <p className={classes.radio}>
         <label>
           <input
@@ -98,7 +101,7 @@ export default function AttendeeForm() {
         <input
           {...register("additions")}
           defaultValue=""
-          placeholder="Anyone else you think might come with you?"
+          placeholder="Anyone else?"
           disabled={submitDisabled}
           className={classes.input}
         />

@@ -39,6 +39,9 @@
 
 .heavy {
   font-weight: 700;
+}
+
+.label {
   width: 6rem;
 }
 

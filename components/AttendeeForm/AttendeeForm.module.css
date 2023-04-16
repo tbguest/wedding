@@ -147,3 +147,9 @@
 .disabled {
   cursor: default;
 }
+
+.secondary {
+  color: #6d6d6d;
+  text-align: center;
+  font-size: 0.8rem;
+}
