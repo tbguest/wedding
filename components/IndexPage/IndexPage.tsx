@@ -61,7 +61,7 @@ export const IndexPage = () => {
             </div>
             <p style={{ marginTop: "32px" }}>
               {
-                "We'll update this page as more details become clear, so check back here before you come. Also, parking is going to require a plan :)."
+                "We'll update this page as more details become clear, so check back here before you come. Also, parking is going to require a plan :). No gifts, please."
               }
             </p>
           </section>
