@@ -43,7 +43,9 @@ export default function AttendeeForm() {
     >
       <h2>Are you coming?</h2>
       <p className={classes.secondary}>
-        {"For big-picture logistics. Specifics aren't really important."}
+        {
+          "We just want a rough idea of numbers. Specifics aren't really important."
+        }
       </p>
       <p className={classes.radio}>
         <label>

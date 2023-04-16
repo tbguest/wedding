@@ -14,21 +14,17 @@ export const IndexPage = () => {
           <h3 style={{ marginBottom: 16 }}>on September 2nd, 2023</h3>
           <br />
           <div style={{ textAlign: "center" }}>
-            <p>{"We're having a party"}</p>
-            <p>{"You're invited!"}</p>
-            <br />
-            <br />
+            <p>{"We're having a party!"}</p>
             <p>{"This is your invitation. RSVP below."}</p>
+            <GiDandelionFlower size={64} style={{ margin: 32 }} />
           </div>
-          <br />
-          <br />
           <section className={classes.details}>
             <div className={classes.info}>
               <p className={classNames(classes.heavy, classes.label)}>
                 Location
               </p>
               <p className={classes.description}>
-                {"2078 Highway 329, The Lodge, NS (our place)"}
+                {"2078 Highway 329, The Lodge, Nova Scotia (our place)"}
               </p>
             </div>
             <div className={classes.info}>
@@ -41,7 +37,7 @@ export const IndexPage = () => {
               <p className={classNames(classes.heavy, classes.label)}>Expect</p>
               <p className={classes.description}>
                 {
-                  "A party, rain or shine. Sufficient shelter to dance all night in any weather. Otherwise limited amenities. Bring whatever you need to spend the day outside. We'll have some chairs kicking around, but not enough for everybody. Bring one if you like. There will be food."
+                  "A party, rain or shine. Sufficient shelter to dance all night in any weather. Otherwise limited amenities. Bring whatever you need to spend the day outside. We'll have some chairs kicking around, but not enough for everybody. Bring one if you like. There will be food. We'll have some beer on tap, but plan to bring your own if you think you'll be thirsty."
                 }
               </p>
             </div>
