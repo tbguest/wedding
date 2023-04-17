@@ -3,10 +3,15 @@ import AttendeeForm from "@/components/AttendeeForm/AttendeeForm";
 import { GiDandelionFlower } from "react-icons/gi";
 import { Footer } from "../Footer";
 import classNames from "classnames";
+import Head from "next/head";
 
 export const IndexPage = () => {
   return (
     <>
+      <Head>
+        <title>L+T</title>
+        <meta property="og:title" content={"L+T"} key="title" />
+      </Head>
       <main className={classes.main}>
         <div className={classes.content}>
           <h1 style={{ marginBottom: 0 }}>Laura and Tristan</h1>
