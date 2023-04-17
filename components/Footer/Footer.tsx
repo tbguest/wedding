@@ -4,7 +4,7 @@ import classes from "./Footer.module.css";
 export const Footer = () => {
   return (
     <footer className={classes.footer}>
-      <Link href={"https://www.tristanguest.dev/"}>@tbguest</Link>
+      <Link href={"https://github.com/tbguest"}>@tbguest</Link>
     </footer>
   );
 };
