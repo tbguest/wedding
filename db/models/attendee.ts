@@ -7,6 +7,11 @@ const create = ({ data }: { data: Prisma.UserCreateInput }) => {
   });
 };
 
+const list = () => {
+  return prisma.user.findMany();
+};
+
 export const Attendee = {
   create,
+  list,
 };

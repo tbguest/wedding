@@ -1,0 +1,38 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: var(--max-width);
+  max-width: var(--max-width);
+}
+
+.list {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.listItem {
+  list-style-type: none;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 100px auto;
+}
+
+.heavy {
+  font-weight: 700;
+}
+
+.label {
+  width: 6rem;
+}
