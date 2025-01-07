@@ -21,9 +21,6 @@ export const IndexPage = () => {
           <div style={{ textAlign: "center" }}>
             <p>{"We're having a party!"}</p>
             <p>{"This is your invitation. RSVP below."}</p>
-            <p>
-              <b style={{ color: "red" }}>{"*Red = new information*"}</b>
-            </p>
             <GiDandelionFlower size={64} style={{ margin: 32 }} />
           </div>
           <section className={classes.details}>
@@ -33,7 +30,7 @@ export const IndexPage = () => {
               </p>
               <p className={classes.description}>
                 {"2078 Highway 329, The Lodge, Nova Scotia (our place). "}
-                <b style={{ color: "red" }}>Parking at 2118 Highway 329.</b>
+                <b>Parking at 2118 Highway 329.</b>
               </p>
             </div>
             <div className={classes.info}>
@@ -56,7 +53,7 @@ export const IndexPage = () => {
                 {
                   "Whatever makes you feel good. We'll be taking the opportunity to wear something fun and fancy. "
                 }
-                <b style={{ color: "red" }}>
+                <b>
                   {
                     "Expect the ground to be a bit soft. You might have a hard time in pointy heels."
                   }
@@ -71,7 +68,7 @@ export const IndexPage = () => {
                 {
                   "There are some options within walking distance if you want a bed. Contact us about that. There's unlimited floor and tenting space."
                 }{" "}
-                <b style={{ color: "red" }}>
+                <b>
                   {
                     "If you're hoping to sleep under a roof, get in touch with us in advance."
                   }
@@ -81,25 +78,24 @@ export const IndexPage = () => {
             <div className={classes.info}>
               <p
                 className={classNames(classes.heavy, classes.label)}
-                style={{ color: "red" }}
               >
                 Parking
               </p>
-              <p style={{ color: "red" }}>
+              <p>
                 {
                   "Most parking will be available at 2118 Highway 329 (Tristan's parents' place). From there you'll have to walk about 200 m through the woods to get to the venue. If you don't think you'll be up for the walk, please let us know, and we'll make a closer option available to you! There's a local cab service that will be available to get you around within the neighbourhood (Lucky Cab: 902 222-6213)."
                 }{" "}
-                <b style={{ color: "red" }}>
+                <b>
                   {"Parking will be tight. Carpool if you can."}
                 </b>
               </p>
             </div>
-            <p style={{ marginTop: "32px", color: "red" }}>
+            <p style={{ marginTop: "32px" }}>
               {
                 "We're super excited to see you on the 2nd. Get in touch with Laura or Tristan if you have questions about access or anything else."
               }
             </p>
-            <p style={{ color: "red" }}>
+            <p>
               {
                 "If there's a story, anecdote, or something else you'd like to share publicly, there will be an opportunity."
               }
